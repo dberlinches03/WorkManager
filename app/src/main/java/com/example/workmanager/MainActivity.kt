@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WorkManagerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                    BackupScreen()
                 }
             }
         }

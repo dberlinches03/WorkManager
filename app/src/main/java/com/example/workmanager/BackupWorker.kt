@@ -17,9 +17,11 @@ class BackupWorker(appContext: Context, params: WorkerParameters) :
             applicationContext.openFileOutput(fileName, Context.MODE_PRIVATE).use { output ->
                 output.write(backupData.toByteArray())
             }
+            Log.d("BACKUP", "Copia de seguridad creada: $fileName")
+            Result.success()
         } catch (e: Exception) {
             Log.e("BACKUP", "Error al crear la copia: ${e.message}")
             Result.failure()
-        } as Result
+        }
     }
 }
